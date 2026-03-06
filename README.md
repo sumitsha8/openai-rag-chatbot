@@ -60,11 +60,11 @@ streamlit run rag_openai_app.py
 
 ## 🧩 How it works
 
-PDF → text: Extracted with pdfplumber.
-Chunking: RecursiveCharacterTextSplitter splits text into ~1000‑token chunks.
-Embeddings: text-embedding-3-small on first build; vectors stored in FAISS.
-Retrieval: Top‑K chunks fetched for each question.
-LLM: gpt-4o-mini answers using only the provided context.
+- PDF → text: Extracted with pdfplumber.
+- Chunking: RecursiveCharacterTextSplitter splits text into ~1000‑token chunks.
+- Embeddings: text-embedding-3-small on first build; vectors stored in FAISS.
+- Retrieval: Top‑K chunks fetched for each question.
+- LLM: gpt-4o-mini answers using only the provided context.
 
 
 
@@ -92,3 +92,7 @@ User Query ----> Embed ----> Search --+------ filter ---+
        \                                           
         \--------> Prompt Builder ----> LLM ----> Answer
 ```
+
+
+## Links: 
+- https://developers.openai.com/api/docs
