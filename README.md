@@ -1,15 +1,12 @@
-# openai-rag-chatbot
-A lightweight Streamlit RAG chatbot that answers questions from your PDFs using OpenAI (gpt‑4o‑mini + text‑embedding‑3‑small) and FAISS—optimized for ultra‑low cost with a “Load vs Rebuild Index” toggle.
-
 # RAG Bot (OpenAI)
 
-A lightweight **Retrieval‑Augmented Generation (RAG)** chatbot built with **Streamlit**, **FAISS**, and **OpenAI**.  
+- A lightweight **Retrieval‑Augmented Generation (RAG)** chatbot built with **Streamlit**, **FAISS**, and **OpenAI**.  
 Upload a PDF, build a vector index once, and ask grounded questions using **gpt‑4o‑mini** with **text‑embedding‑3-small**.
 
-> **Why it’s special**  
-> - **Ultra‑low cost**: Embeddings ~ $0.02 per **1M** tokens, one-time; chat calls are in fractions of a cent.  
-> - **Zero re‑embedding by default**: “Load Existing Index” toggle avoids extra costs.  
-> - **From scratch to production‑friendly**: Clean pipeline, small footprint, readable code.
+**Why it’s special**  
+- **Ultra‑low cost**: Embeddings ~ $0.02 per **1M** tokens, one-time; chat calls are in fractions of a cent.
+- **Zero re‑embedding by default**: “Load Existing Index” toggle avoids extra costs.  
+- **From scratch to production‑friendly**: Clean pipeline, small footprint, readable code.
 
 ![App UI](assets/screenshot-ui.png)
 
