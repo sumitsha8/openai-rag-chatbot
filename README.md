@@ -65,3 +65,30 @@ Chunking: RecursiveCharacterTextSplitter splits text into ~1000‑token chunks.
 Embeddings: text-embedding-3-small on first build; vectors stored in FAISS.
 Retrieval: Top‑K chunks fetched for each question.
 LLM: gpt-4o-mini answers using only the provided context.
+
+
+
+## Architecture (Boxed Diagram)
+```
++-------------------+     build      +------------------+
+|  Source Docs      |  ----------->  |  Chunker         |
+|  (PDF/HTML/MD)    |                |  (split & clean) |
++-------------------+                +------------------+
+                                          |
+                                          v
+                                   +--------------+
+                                   | Embedder     |
+                                   | (text->vec)  |
+                                   +--------------+
+                                      |        |
+                                      v        v
+                             +--------------+  +----------------+
+                             | Vector Store |  | Metadata Store |
+                             | (ANN index)  |  | (filters,tags) |
+                             +--------------+  +----------------+
+                                      ^                 |
+                                      |                 |
+User Query ----> Embed ----> Search --+------ filter ---+
+       \                                           
+        \--------> Prompt Builder ----> LLM ----> Answer
+```
